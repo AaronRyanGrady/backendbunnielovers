@@ -12,7 +12,6 @@ var Schema= mongoose.Schema;
         
 
 
-
 });*/
 
 const FollowSchema = Schema({
