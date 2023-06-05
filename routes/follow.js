@@ -2,7 +2,7 @@
 var express = require('express');
 //const multer = require('multer');
 var FollowController = require('../controllers/follow');
-//const upload = multer({ dest: 'uploads/' }); // Indica el directorio donde se guardar·n las im·genes
+//const upload = multer({ dest: 'uploads/' }); // Indica el directorio donde se guardar√°n las im√°genes
 var api= express.Router();
 var md_auth = require('../midlewares/autenticated');
 /*var multipart = require('connect-multiparty');
