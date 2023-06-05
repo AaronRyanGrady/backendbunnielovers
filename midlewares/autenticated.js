@@ -8,7 +8,7 @@ var secret='clave_secreta_admin_backend';
 exports.ensureAuth = function(req, res, next) {
 
     if (!req.headers.authorization) {
-        return res.status(403).send({message:' la petición no tiene la cabecera de autenticación'});
+        return res.status(403).send({message:' la peticiÃ³n no tiene la cabecera de autenticaciÃ³n'});
     
 
     }
