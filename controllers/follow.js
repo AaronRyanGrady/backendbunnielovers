@@ -135,7 +135,7 @@ async function saveFollow(req, res) {
             .limit(itemsPerPage);
       
           if (!follows || follows.length === 0) {
-            return res.status(404).send({ message: 'No estás siguiendo a ningún usuario' });
+            return res.status(404).send({ message: 'No estÃ¡s siguiendo a ningÃºn usuario' });
           }
           const value = await followUserIds(req.user.sub);//la inclui de user controller
           return res.status(200).send({
@@ -176,7 +176,7 @@ async function saveFollow(req, res) {
             .limit(itemsPerPage);
       
           if (!follows || follows.length === 0) {
-            return res.status(404).send({ message: 'No estás siguiendo a ningún usuario' });
+            return res.status(404).send({ message: 'No estÃ¡s siguiendo a ningÃºn usuario' });
           }
           const value = await followUserIds(req.user.sub);//la inclui de user controller
           return res.status(200).send({
@@ -302,7 +302,7 @@ async function followUserIds(user_id) {
       followed: follows_clean2
     };
   } catch (err) {
-    throw new Error('Error en la obtención de los usuarios seguidos');
+    throw new Error('Error en la obtenciÃ³n de los usuarios seguidos');
   }
 }
 
