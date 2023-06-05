@@ -5,7 +5,7 @@ var app = require('./app');
 
 var port= 3800;
 
-//conexiòn a db
+//conexiÃ³n a db
 mongoose.Promise = global.Promise;
 mongoose.set("strictQuery", false);
 mongoose.connect('mongodb+srv://aryan:5kZEdO1D1ALFpqXD@cluster0.mkwrvnc.mongodb.net/apiconejos')
