@@ -17,7 +17,7 @@ function probando(req,res){
 /*function saveMessage(req,res){
     var params=req.body;
 
-    if(!params.text || !params.receiver) return res.status(404).send({message:'envía los datos necesarios'})
+    if(!params.text || !params.receiver) return res.status(404).send({message:'envï¿½a los datos necesarios'})
     var message=new Message();
     message.emitter=req.user.sub;
     message.receiver=params.receiver;
@@ -26,7 +26,7 @@ function probando(req,res){
 
     message.save((err,messageStored)=>{
 
-        if(err) return res.status(500).send({message:'error en la petición'})
+        if(err) return res.status(500).send({message:'error en la peticiï¿½n'})
         if(!messageStored) return res.status(500).send({message:'error al enviar el mensaje'})
     
           return  res.status(200).send({message: messageStored});
@@ -39,11 +39,11 @@ function probando(req,res){
     var params = req.body;
   
     if (!params.text || !params.receiver) {
-      return res.status(404).send({message: 'Envía los datos necesarios'});
+      return res.status(404).send({message: 'Envï¿½a los datos necesarios'});
     }
   
     var message = new Message();
-    message.emitter = req.params.id; // Usamos el id del usuario que envía el mensaje
+    message.emitter = req.params.id; // Usamos el id del usuario que envï¿½a el mensaje
     message.receiver = params.receiver;
     message.text = params.text;
     message.create_at = moment().unix();
@@ -59,7 +59,7 @@ function probando(req,res){
     return res.status(200).send({message: messageStored});
   })
   .catch((err) => {
-    return res.status(500).send({message: 'Error en la petición'});
+    return res.status(500).send({message: 'Error en la peticiï¿½n'});
   });
   }*/
 
@@ -76,7 +76,7 @@ function probando(req,res){
       .sort('-create_at')
       .paginate(page, itemsPerPage, (err, messages, total) => {
         if (err) {
-          return res.status(500).send({ message: 'Error en la petición' });
+          return res.status(500).send({ message: 'Error en la peticiï¿½n' });
         }
   
         if (!messages) {
@@ -101,7 +101,7 @@ function probando(req,res){
         return res.status(200).send({ messages: messages });
       })
       .catch((err) => {
-        return res.status(500).send({ message: 'Error en la petición' });
+        return res.status(500).send({ message: 'Error en la peticiï¿½n' });
       });
   }*/
 
@@ -109,7 +109,7 @@ function probando(req,res){
   /*function saveMessage(req,res){
     var params=req.body;
 
-    if(!params.text || !params.receiver) return res.status(200).send({message:'envía los datos necesarios'})
+    if(!params.text || !params.receiver) return res.status(200).send({message:'envï¿½a los datos necesarios'})
     var message=new Message();
     message.emitter=req.user.sub;
     message.receiver=params.receiver;
@@ -118,7 +118,7 @@ function probando(req,res){
 
     message.save((err,messageStored)=>{
 
-        if(err) return res.status(500).send({message:'error en la petición'})
+        if(err) return res.status(500).send({message:'error en la peticiï¿½n'})
         if(!messageStored) return res.status(500).send({message:'error al enviar el mensaje'})
     
           return  res.status(200).send({message: messageStored});
@@ -130,7 +130,7 @@ async function saveMessage(req, res) {
   var params = req.body;
 
   if (!params.text || !params.receiver) {
-    return res.status(200).send({ message: 'Envía los datos necesarios' });
+    return res.status(200).send({ message: 'EnvÃ­a los datos necesarios' });
   }
 
   var message = new Message();
@@ -149,7 +149,7 @@ async function saveMessage(req, res) {
     return res.status(200).send({ message: messageStored });
   } catch (err) {
     console.log(err);
-    return res.status(500).send({ message: 'Error en la petición' });
+    return res.status(500).send({ message: 'Error en la peticiÃ³n' });
   }
 }
 
@@ -167,7 +167,7 @@ async function saveMessage(req, res) {
         return res.status(200).send({ messages: messages });
       })
       .catch((err) => {
-        return res.status(500).send({ message: 'Error en la petición' });
+        return res.status(500).send({ message: 'Error en la peticiï¿½n' });
       });
   }*/
 
@@ -184,7 +184,7 @@ async function saveMessage(req, res) {
   
     Message.find({ receiver: userId }).populate('emitter').paginate(page, itemsPerPage, (err, messages, total) => {
         if (err) {
-          return res.status(500).send({ message: 'Error en la petición' });
+          return res.status(500).send({ message: 'Error en la peticiï¿½n' });
         }
   
         if (!messages) {
@@ -200,10 +200,10 @@ async function saveMessage(req, res) {
   }*/
   async function getReceivedMessages2(req, res) {
     const userId = req.user.sub; // ID del usuario autenticado obtenido desde el token
-    const page = parseInt(req.query.page) || 1; // Número de página, se obtiene desde la consulta
+    const page = parseInt(req.query.page) || 1; // Nï¿½mero de pï¿½gina, se obtiene desde la consulta
   
-    const limit = 10; // Número de mensajes por página
-    const skip = (page - 1) * limit; // Cantidad de mensajes para omitir según la página actual
+    const limit = 10; // Nï¿½mero de mensajes por pï¿½gina
+    const skip = (page - 1) * limit; // Cantidad de mensajes para omitir segï¿½n la pï¿½gina actual
   
     try {
       const totalMessages = await Message.countDocuments({ receiver: userId });
@@ -223,7 +223,7 @@ async function saveMessage(req, res) {
         messages: paginatedMessages
       });
     } catch (err) {
-      return res.status(500).send({ message: 'Error en la petición' });
+      return res.status(500).send({ message: 'Error en la peticiÃ³n' });
     }
   }
   
@@ -232,7 +232,7 @@ async function saveMessage(req, res) {
   var params = req.body;
 
   if (!params.text || !params.receiver) {
-    return res.status(200).send({ message: 'Envía los datos necesarios' });
+    return res.status(200).send({ message: 'EnvÃ­a los datos necesarios' });
   }
 
   var message = new Message();
@@ -252,14 +252,14 @@ async function saveMessage(req, res) {
     return res.status(200).send({ message: messageStored });
   } catch (err) {
     console.log(err);
-    return res.status(500).send({ message: 'Error en la petición' });
+    return res.status(500).send({ message: 'Error en la peticiÃ³n' });
   }
 }
 /*
 function getUnviewedMessages(req, res) {
   var userId = req.user.sub;
   Message.count({receiver:userId, viewed:'false'}).exec((err,count)=>{
-      if(err) return res.status(500).send({message:'Error en la petición'});
+      if(err) return res.status(500).send({message:'Error en la peticiï¿½n'});
       return res.status(200).send({
           'unviewed': count
       });
@@ -278,7 +278,7 @@ function getUnviewedMessages(req, res) {
     })
     .catch((err) => {
       console.log(err);
-      return res.status(500).send({ message: 'Error en la petición' });
+      return res.status(500).send({ message: 'Error en la peticiÃ³n' });
     });
 }
 
@@ -313,7 +313,7 @@ async function getReceivedMessages(req, res) {
     });
   } catch (err) {
     console.log(err);
-    return res.status(500).send({ message: 'Error en la petición' });
+    return res.status(500).send({ message: 'Error en la peticiÃ³n' });
   }
 }
   //funcion gt getEmmitMessages antigua sin el sub
@@ -330,7 +330,7 @@ async function getReceivedMessages(req, res) {
         return res.status(200).send({ messages: messages });
       })
       .catch((err) => {
-        return res.status(500).send({ message: 'Error en la petición' });
+        return res.status(500).send({ message: 'Error en la peticiÃ³n' });
       });
   }
   function getEmmitMessages2(req, res) {
@@ -364,18 +364,18 @@ async function getReceivedMessages(req, res) {
           })
           .catch((err) => {
             console.log(err);
-            return res.status(500).send({ message: 'Error en la petición' });
+            return res.status(500).send({ message: 'Error en la peticiÃ³n' });
           });
       })
       .catch((err) => {
         console.log(err);
-        return res.status(500).send({ message: 'Error en la petición' });
+        return res.status(500).send({ message: 'Error en la peticiÃ³n' });
       });
   }
   /*function getUnviewedMessages(req, res) {
     var userId = req.params.user;
     Message.count({receiver:userId, viewed:'false'}).exec((err,count)=>{
-        if(err) return res.status(500).send({message:'Error en la petición'});
+        if(err) return res.status(500).send({message:'Error en la peticiï¿½n'});
         return res.status(200).send({
             'unviewed': count
         });
@@ -413,7 +413,7 @@ async function getReceivedMessages(req, res) {
       });
     } catch (err) {
       console.log(err);
-      return res.status(500).send({ message: 'Error en la petición' });
+      return res.status(500).send({ message: 'Error en la peticiï¿½n' });
     }
   }*/
 
@@ -446,7 +446,7 @@ async function getReceivedMessages(req, res) {
       });
     } catch (err) {
       console.log(err);
-      return res.status(500).send({ message: 'Error en la petición' });
+      return res.status(500).send({ message: 'Error en la peticiï¿½n' });
     }
   }
 */
@@ -462,7 +462,7 @@ async function getReceivedMessages(req, res) {
         });
       })
       .catch((err) => {
-        return res.status(500).send({message:'Error en la petición'});
+        return res.status(500).send({message:'Error en la peticiï¿½n'});
       });
 }*/
 
@@ -471,7 +471,7 @@ async function getReceivedMessages(req, res) {
 
     Message.update({receiver:userId, viewed:'false'},{viewed:'true'},{"multi":true},(err,messageUpdated)=>{
 
-        if(err) return res.status(500).send({message:'Error en la petición'});
+        if(err) return res.status(500).send({message:'Error en la peticiï¿½n'});
         return res.status(200).send({
           messages:messageUpdated
         })
@@ -492,7 +492,7 @@ async function getReceivedMessages(req, res) {
         return res.status(200).send({messages: messageUpdated});
       })
       .catch((err) => {
-        return res.status(500).send({message: 'Error en la petición'});
+        return res.status(500).send({message: 'Error en la peticiï¿½n'});
       });
   }*/
 
@@ -503,7 +503,7 @@ async function getReceivedMessages(req, res) {
 
     Message.update({receiver:userId, viewed:'false'},{viewed:'true'},{"multi":true},(err,messageUpdated)=>{
 
-        if(err) return res.status(500).send({message:'Error en la petición'});
+        if(err) return res.status(500).send({message:'Error en la peticiï¿½n'});
         return res.status(200).send({
           messages:messageUpdated
         })
@@ -526,7 +526,7 @@ function setViewedMessages(req, res) {
     })
     .catch((err) => {
       console.log(err);
-      return res.status(500).send({ message: 'Error en la petición' });
+      return res.status(500).send({ message: 'Error en la peticiÃ³n' });
     });
 }
 

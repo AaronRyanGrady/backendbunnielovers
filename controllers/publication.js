@@ -35,12 +35,12 @@ async function savePublication(req, res) {
 
     const publicationStored = await publication.save();
     if (!publicationStored) {
-      return res.status(404).send({ message: 'La publicación no ha sido guardada' });
+      return res.status(404).send({ message: 'La publicaciÃ³n no ha sido guardada' });
     }
 
     return res.status(200).send({ publication: publicationStored });
   } catch (err) {
-    return res.status(500).send({ message: 'Error al guardar la publicación' });
+    return res.status(500).send({ message: 'Error al guardar la publicaciÃ³n' });
   }
 }
 
@@ -58,7 +58,7 @@ async function savePublication(req, res) {
     publication.save((err, publicationStored)=>{
       if(err) return res.status(err).send({message:'error saving publication' }); 
         
-      if(!publicationStored) return res.status(404).send({message:'la publicación no ha sido guardada'});
+      if(!publicationStored) return res.status(404).send({message:'la publicaciï¿½n no ha sido guardada'});
         
       return res.status(200).send({publication: publicationStored});
     
@@ -88,7 +88,7 @@ async function savePublication(req, res) {
       return res.status(200).send({ publication: publicationStored });
     } catch (err) {
       console.error(err);
-      return res.status(500).send({ message: 'Error al guardar la publicación' });
+      return res.status(500).send({ message: 'Error al guardar la publicaciï¿½n' });
     }
   }*/
 
@@ -167,7 +167,7 @@ async function savePublication(req, res) {
       });
     } catch (err) {
       console.log(err);
-      return res.status(500).send({ message: 'Error en la petición' });
+      return res.status(500).send({ message: 'Error en la peticiÃ³n' });
     }
   }
 
@@ -218,7 +218,7 @@ async function savePublication(req, res) {
       });
     } catch (err) {
       console.log(err);
-      return res.status(500).send({ message: 'Error en la petición' });
+      return res.status(500).send({ message: 'Error en la peticiï¿½n' });
     }
   }*/
 
@@ -271,7 +271,7 @@ async function savePublication(req, res) {
       });
     } catch (err) {
       console.log(err);
-      return res.status(500).send({ message: 'Error en la petición' });
+      return res.status(500).send({ message: 'Error en la peticiÃ³n' });
     }
   }
   
@@ -285,13 +285,13 @@ async function savePublication(req, res) {
       .exec()
       .then((publication) => {
         if (!publication) {
-          return res.status(404).send({ message: 'No existe la publicación' });
+          return res.status(404).send({ message: 'No existe la publicaciï¿½n' });
         }
         return res.status(200).send({ publication });
       })
       .catch((err) => {
         console.log(err);
-        return res.status(500).send({ message: 'Error al devolver la publicación' });
+        return res.status(500).send({ message: 'Error al devolver la publicaciÃ³n' });
       });
   }
 
@@ -318,13 +318,13 @@ async function savePublication(req, res) {
       .exec()
       .then((publicationRemoved) => {
         if (publicationRemoved.deletedCount === 0) {
-          return res.status(404).send({ message: 'No se ha borrado la publicación' });
+          return res.status(404).send({ message: 'No se ha borrado la publicaciÃ³n' });
         }
         return res.status(200).send({ publication: publicationRemoved });
       })
       .catch((err) => {
         console.log(err);
-        return res.status(500).send({ message: 'Error al borrar la publicación' });
+        return res.status(500).send({ message: 'Error al borrar la publicaciÃ³n' });
       });
   }
 
@@ -414,7 +414,7 @@ async function savePublication(req, res) {
       if (file_ext == 'png' || file_ext == 'jpg' || file_ext == 'jpeg' || file_ext == 'gif') {
         
         try {
-          // Actualizar documento de la publicación
+          // Actualizar documento de la publicaciï¿½n
           const publicationUpdated = await Publication.findOneAndUpdate(
             { _id: publicationId },
             { file: file_name },
@@ -422,16 +422,16 @@ async function savePublication(req, res) {
           );
   
           if (!publicationUpdated) {
-            return res.status(404).send({ message: 'No se ha podido actualizar la publicación' });
+            return res.status(404).send({ message: 'No se ha podido actualizar la publicaciï¿½n' });
           }
   
           return res.status(200).send({ publication: publicationUpdated });
         } catch (err) {
           console.log(err);
-          return res.status(500).send({ message: 'Error en la petición' });
+          return res.status(500).send({ message: 'Error en la peticiï¿½n' });
         }
       } else {
-        removeFilesOfUploads(res, file_path, 'Extensión no válida');
+        removeFilesOfUploads(res, file_path, 'Extensiï¿½n no vï¿½lida');
       }
     } else {
       return res.status(200).send({ message: 'No se ha subido imagen' });
@@ -477,9 +477,9 @@ async function savePublication(req, res) {
   
       var follows_clean = follows.map((follow) => follow.followed);
       console.log(follows_clean);
-      // Resto del código de la función
+      // Resto del cï¿½digo de la funciï¿½n
     } catch (err) {
-      return res.status(500).send({ message: 'Error en la petición' });
+      return res.status(500).send({ message: 'Error en la peticiï¿½n' });
     }
   }*/
 
@@ -596,19 +596,19 @@ async function uploadImage(req, res) {
           ).exec();
 
           if (!publicationUpdated) {
-            return res.status(404).send({ message: 'No se ha podido actualizar la publicación' });
+            return res.status(404).send({ message: 'No se ha podido actualizar la publicaciÃ³n' });
           }
 
           return res.status(200).send({ publication: publicationUpdated });
         } else {
-          removeFilesOfUploads(res, file_path, 'No tienes permiso para actualizar esta publicación');
+          removeFilesOfUploads(res, file_path, 'No tienes permiso para actualizar esta publicaciÃ³n');
         }
       } catch (err) {
         console.log(err);
-        return res.status(500).send({ message: 'Error en la petición' });
+        return res.status(500).send({ message: 'Error en la peticiÃ³n' });
       }
     } else {
-      removeFilesOfUploads(res, file_path, 'Extensión no válida');
+      removeFilesOfUploads(res, file_path, 'ExtensiÃ³n no vÃ¡lida');
     }
   } else {
     return res.status(200).send({ message: 'No se ha subido imagen' });

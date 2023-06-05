@@ -22,7 +22,7 @@ function home(req,res){
     res.status(200).send({message:'hola mundo desde server js'});
 };
 function pruebas(req,res){
-    res.status(200).send({message:'acción de pruebas'});
+    res.status(200).send({message:'acciï¿½n de pruebas'});
 };
 
 
@@ -71,7 +71,7 @@ async function saveUser(req, res) {
     var password =params.password;
 
     /*User.findOne({email: email},(err,user)=>{
-      if(err) return res.status(500).send({message:'error en la petición'});
+      if(err) return res.status(500).send({message:'error en la peticiï¿½n'});
       
       if (user){
         bcrypt.compare(password,user.password,(err,check)=>{
@@ -133,16 +133,16 @@ async function saveUser(req, res) {
     }
   })
   .catch((err) => {
-    return res.status(500).send({ message: "error en la petición" });
+    return res.status(500).send({ message: "error en la peticiÃ³n" });
   });
 
       }
-//función buena antes de la modificacion con follows
+//funciï¿½n buena antes de la modificacion con follows
       //function getUser(req, res) {
         //var userId=req.params.id;
       
         /*User.findById(userId,(err,user)=>{
-          if(err) return res.status(500).send({message: 'error en la petición'});
+          if(err) return res.status(500).send({message: 'error en la peticiï¿½n'});
       
           if(!user) return res.status(404).send({message: 'el usuario no existe'});
       
@@ -156,17 +156,17 @@ async function saveUser(req, res) {
           return res.status(200).send({ user });
         })
         .catch((err) => {
-          return res.status(500).send({ message: "error en la petición" });
+          return res.status(500).send({ message: "error en la peticiï¿½n" });
         });
       }*/
 
 
-      //función modificada con los follows
+      //funciï¿½n modificada con los follows
       //function getUser(req, res) {
         //var userId=req.params.id;
       
         /*User.findById(userId,(err,user)=>{
-          if(err) return res.status(500).send({message: 'error en la petición'});
+          if(err) return res.status(500).send({message: 'error en la peticiï¿½n'});
       
           if(!user) return res.status(404).send({message: 'el usuario no existe'});
       
@@ -184,10 +184,10 @@ async function saveUser(req, res) {
           
         })
         .catch((err) => {
-          return res.status(500).send({ message: "error en la petición" });
+          return res.status(500).send({ message: "error en la peticiï¿½n" });
         });
       }*/
-      //funcion implementada con mostrando que usuarios me están siguiendo
+      //funcion implementada con mostrando que usuarios me estï¿½n siguiendo
      /* function getUser(req, res) {
         var userId = req.params.id;
       
@@ -206,7 +206,7 @@ async function saveUser(req, res) {
               });
           })
           .catch((err) => {
-            return res.status(500).send({ message: "Error en la petición" });
+            return res.status(500).send({ message: "Error en la peticiï¿½n" });
           });
       }*/
      
@@ -215,7 +215,7 @@ async function saveUser(req, res) {
       var userId = req.params.id;
     
       User.findById(userId,(err, user) => {
-        if(err) return res.status(500).send({message: 'error en la petición'});
+        if(err) return res.status(500).send({message: 'error en la peticiï¿½n'});
       
         if(!user) return res.status(404).send({message: 'el usuario no existe'});
         followThisUser(req.user.sub,userId).then((value)=>{
@@ -241,15 +241,15 @@ async function saveUser(req, res) {
                });
             })
             .catch(err => {
-              return res.status(500).send({ message: 'error en la petición' });
+              return res.status(500).send({ message: 'error en la peticiÃ³n' });
             });
         })
         .catch(err => {
-          return res.status(500).send({ message: 'error en la petición' });
+          return res.status(500).send({ message: 'error en la peticiÃ³n' });
         });
     }
 
-    //función de udemy mal implementada
+    //funciï¿½n de udemy mal implementada
 
     /*async function followThisUser(identity_user_id,user_id) {
 
@@ -301,7 +301,7 @@ async function saveUser(req, res) {
           followed: follows_clean2
         };
       } catch (err) {
-        throw new Error('Error en la obtención de los usuarios seguidos');
+        throw new Error('Error en la obtenciÃ³n de los usuarios seguidos');
       }
     }
     //funcion udemy sin modificar follow -funcion funcional organizada por chatgpt
@@ -322,10 +322,10 @@ async function saveUser(req, res) {
           pages: result.totalPages,
         });
       } catch (err) {
-        return res.status(500).send({ message: 'Error en la petición' });
+        return res.status(500).send({ message: 'Error en la peticiï¿½n' });
       }
     }*/
-    //función get users actualizada con follows pero con el codigo de udemy
+    //funciï¿½n get users actualizada con follows pero con el codigo de udemy
       /*function getUsers(req,res){
         var identity_user_id = req.user.sub;
         var page= 1;
@@ -336,7 +336,7 @@ async function saveUser(req, res) {
         var itemsPerPage=5;
 
         User.find().sort('_id').paginate(page,itemsPerPage,(err,users,total)=>{
-            if(err) return res.status(500).send({message:'error en la petición'});
+            if(err) return res.status(500).send({message:'error en la peticiï¿½n'});
             if(!users) return res.status(404).send({message: 'no hay usuarios disponibles'});
             followUserIds(identity_user_id).then((value)=>{
 
@@ -387,14 +387,14 @@ async function saveUser(req, res) {
                 });
               })
               .catch((err) => {
-                return res.status(500).send({ message: 'Error en la petición' });
+                return res.status(500).send({ message: 'Error en la peticiï¿½n' });
               });
           })
           .catch((err) => {
-            return res.status(500).send({ message: 'Error en la petición' });
+            return res.status(500).send({ message: 'Error en la peticiï¿½n' });
           });
       }*/
-        //no funcionan todavía
+        //no funcionan todavï¿½a
       /*function updateUser(req,res){
         var userId = req.params.id;
         var update= req.body;
@@ -409,7 +409,7 @@ async function saveUser(req, res) {
         }
         User.findByIdAndUpdate(userId,update,{new:true}, (err,userUpdate)=>{
 
-            if(err) return res.status(500).send({message:'error en la petición'});
+            if(err) return res.status(500).send({message:'error en la peticiï¿½n'});
             if(!userUpdated) return res.status(404).send({message: 'no se ha podido actualizar el usuario'});
 
             return res.status(200).send({user: userUpdated});
@@ -438,7 +438,7 @@ async function saveUser(req, res) {
             pages: result.totalPages
           });
         } catch (err) {
-          return res.status(500).send({ message: 'Error en la petición' });
+          return res.status(500).send({ message: 'Error en la peticiÃ³n' });
         }
       }
  //getcounters y getcountfollow funciones desactualizadas de victor robles
@@ -485,7 +485,7 @@ async function saveUser(req, res) {
             const value = await getCountFollow(userId);
             return res.status(200).send(value);
           } catch (err) {
-            return res.status(500).send({ message: 'Error en la petición' });
+            return res.status(500).send({ message: 'Error en la peticiÃ³n' });
           }
         }
         
@@ -500,7 +500,7 @@ async function saveUser(req, res) {
               publications
             };
           } catch (err) {
-            throw new Error('Error en la obtención de los contadores');
+            throw new Error('Error en la obtenciÃ³n de los contadores');
           }
         }
       
@@ -522,7 +522,7 @@ async function saveUser(req, res) {
 
       }*/
 
-      //funcion uploadImage vr con la otra función
+      //funcion uploadImage vr con la otra funciï¿½n
 
       
       async function uploadImage(req, res) {
@@ -559,10 +559,10 @@ async function saveUser(req, res) {
               return res.status(200).send({ user: userUpdated });
             } catch (err) {
               console.log(err);
-              return res.status(500).send({ message: 'Error en la petición' });
+              return res.status(500).send({ message: 'Error en la peticiÃ³n' });
             }
           } else {
-             return removeFilesOfUploads(res, file_path, 'Extensión no válida');
+             return removeFilesOfUploads(res, file_path, 'ExtensiÃ³n no vÃ¡lida');
           }
         } else {
           return res.status(200).send({ message: 'No se ha subido imagen' });
@@ -618,7 +618,7 @@ function getImageFile(req,res){
               return res.status(404).send({ message: "el usuario no existe" });
             }
       
-            // Si la imagen se envía como un archivo adjunto en la petición, se guarda en la carpeta 'uploads' y se añade su ruta al objeto 'user'
+            // Si la imagen se envï¿½a como un archivo adjunto en la peticiï¿½n, se guarda en la carpeta 'uploads' y se aï¿½ade su ruta al objeto 'user'
             if (req.file) {
               user.imagePath = req.file.path;
             }
@@ -626,7 +626,7 @@ function getImageFile(req,res){
             return res.status(200).send({ user });
           })
           .catch((err) => {
-            return res.status(500).send({ message: "error en la petición" });
+            return res.status(500).send({ message: "error en la peticiï¿½n" });
           });
       }*/
       /*function getUsers(req, res) {
@@ -638,7 +638,7 @@ function getImageFile(req,res){
             return res.status(200).send({ users });
           })
           .catch((err) => {
-            return res.status(500).send({ message: "error en la petición" });
+            return res.status(500).send({ message: "error en la peticiï¿½n" });
           });
       }*/
 
@@ -652,7 +652,7 @@ function getImageFile(req,res){
             return res.status(200).send({ users });
           })
           .catch((err) => {
-            return res.status(500).send({ message: "error en la petición" });
+            return res.status(500).send({ message: "error en la peticiï¿½n" });
           });
       }*/
 
@@ -679,7 +679,7 @@ function getImageFile(req,res){
             return res.status(200).send({ user: userUpdated });
           })
           .catch((err) => {
-            return res.status(500).send({ message: "error en la petición" });
+            return res.status(500).send({ message: "error en la peticiÃ³n" });
           });
       }
       
@@ -692,11 +692,11 @@ function getImageFile(req,res){
               return res.status(404).send({ message: "el usuario no existe" });
             }
       
-            // Si la imagen se envía como un archivo adjunto en la petición, se guarda en la carpeta 'uploads' y se actualiza la propiedad 'image' del objeto 'user'
+            // Si la imagen se envï¿½a como un archivo adjunto en la peticiï¿½n, se guarda en la carpeta 'uploads' y se actualiza la propiedad 'image' del objeto 'user'
             if (req.file) {
               const imagePath = req.file.path;
               const imageBuffer = fs.readFileSync(imagePath); // Lee el archivo como un buffer
-              const imageType = req.file.mimetype.split('/')[1]; // Obtiene la extensión del archivo
+              const imageType = req.file.mimetype.split('/')[1]; // Obtiene la extensiï¿½n del archivo
               const imageName = `${userId}.${imageType}`; // Define el nombre del archivo
               const imagePathWithImageName = `uploads/${imageName}`; // Define la ruta completa del archivo con el nombre
       
@@ -710,7 +710,7 @@ function getImageFile(req,res){
             return res.status(200).send({ user: savedUser });
           })
           .catch((err) => {
-            return res.status(500).send({ message: "error en la petición" });
+            return res.status(500).send({ message: "error en la peticiÃ³n" });
           });
       }
 
@@ -723,11 +723,11 @@ function getImageFile(req,res){
               return res.status(404).send({ message: "el usuario no existe" });
             }
       
-            // Si la imagen se envía como un archivo adjunto en la petición, se guarda en la carpeta 'uploads' y se actualiza la propiedad 'image' del objeto 'user'
+            // Si la imagen se envï¿½a como un archivo adjunto en la peticiï¿½n, se guarda en la carpeta 'uploads' y se actualiza la propiedad 'image' del objeto 'user'
             if (req.file) {
               const imagePath = req.file.path;
               const imageBuffer = fs.readFileSync(imagePath); // Lee el archivo como un buffer
-              const imageType = req.file.mimetype.split('/')[1]; // Obtiene la extensión del archivo
+              const imageType = req.file.mimetype.split('/')[1]; // Obtiene la extensiï¿½n del archivo
               const imageName = `${userId}.${imageType}`; // Define el nombre del archivo
               const imagePathWithImageName = `uploads/${imageName}`; // Define la ruta completa del archivo con el nombre
       
@@ -741,7 +741,7 @@ function getImageFile(req,res){
             return res.status(200).send({ user: savedUser });
           })
           .catch((err) => {
-            return res.status(500).send({ message: "error en la petición" });
+            return res.status(500).send({ message: "error en la peticiÃ³n" });
           });
       }
 
@@ -763,7 +763,7 @@ function getImageFile(req,res){
             return res.status(200).send({ imageUrl: `http://localhost:3800/api/${user.image}` });
           })
           .catch((err) => {
-            return res.status(500).send({ message: "error en la petición" });
+            return res.status(500).send({ message: "error en la peticiÃ³n" });
           });
       }
     
